@@ -2,13 +2,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { GymService } from '../api/gym.service';
 import { Router } from '@angular/router';
 
+
 @Component({
-  selector: 'app-gymread',
-  templateUrl: './gymread.component.html',
-  styleUrls: ['./gymread.component.css']
+  selector: 'app-gyminfo',
+  templateUrl: './gyminfo.component.html',
+  styleUrls: ['./gyminfo.component.css']
 })
 
-export class GymreadComponent implements OnInit {
+export class GyminfoComponent implements OnInit {
   gyms: any;
   public id1: number;
 
@@ -19,25 +20,11 @@ export class GymreadComponent implements OnInit {
   constructor(private gymService: GymService, private router: Router) { }
 
   ngOnInit() {
-    this.gyms = this.gymService.getGyms();
+    this.gyms = this.gymService.getOneGym(this.id_gym);
   }
 
-  onClick() {
-    this.id_gym = this.gyms.id;
-    console.log('Clickeo' , this.gyms.id_Gym);
-    this.clickPost.emit(this.mensaje.id_Gym);
-  }
-
-  escuchaClick( id: number ) {
-    console.log('Clic en: ' , id);
-
-  }
   Lectura( id1 )  {
     console.log(id1);
     this.router.navigate(['/gyminfo']);
   }
-
-
 }
-
-

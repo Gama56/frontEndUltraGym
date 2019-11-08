@@ -8,13 +8,15 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { GyminfoComponent } from './gyminfo/gyminfo.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     GymreadComponent,
-    LoginComponent
+    LoginComponent,
+    GyminfoComponent
   ],
   imports: [
     BrowserModule,
