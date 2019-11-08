@@ -1,0 +1,12 @@
+<div class="center">
+<ul class="list-group">
+      
+        <li *ngFor="let gym of gyms | async" class="list-group-item" (click)="onClick()" class="list-group-item" 
+          >
+                <img class="card-img-top" [src]="'/assets/img/gym-' + gym.id_Gym + '.jpg'">
+          <h2> {{ gym.gym_Campus }} </h2>        
+          <p> Dirección {{ gym.gym_Address}} </p>
+          <p>Telefono {{ gym.gym_Phone }} </p>
+        </li>
+</ul>
+</div>
