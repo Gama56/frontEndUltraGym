@@ -13,6 +13,7 @@ export class UserServicesService {
         this.url = 'https://backend-ultragym.azurewebsites.net/api/User';
     }
   getUsers(users, password) {
-    return this._http.get(this.url + '/UserLogin?Email=' + users + '&Password=' + password, { responseType: 'json' });
+    return this._http.get('https://backend-ultragym.azurewebsites.net/api/Users/UserLogin?Email=' + users
+    + '&Password=' + password, { responseType: 'json' });
   }
 }

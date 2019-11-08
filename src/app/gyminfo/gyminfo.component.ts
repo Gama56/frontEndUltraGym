@@ -10,21 +10,16 @@ import { Router } from '@angular/router';
 })
 
 export class GyminfoComponent implements OnInit {
-  gyms: any;
-  public id1: number;
-
-  @Input() mensaje: any;
-  @Output() clickPost = new EventEmitter<number>();
-  id_gym: number;
+  public gyms: any;
+  public id_User: any;
 
   constructor(private gymService: GymService, private router: Router) { }
 
   ngOnInit() {
-    this.gyms = this.gymService.getOneGym(this.id_gym);
+    this.id_User = localStorage.getItem('gym');
+    console.log(this.id_User);
+    this.gyms = this.gymService.getOneGym(4);
+    console.log(this.gyms);
   }
-
-  Lectura( id1 )  {
-    console.log(id1);
-    this.router.navigate(['/gyminfo']);
-  }
+ // this.gyms = this.gymService.getGyms();
 }

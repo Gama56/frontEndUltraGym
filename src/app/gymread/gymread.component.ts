@@ -34,6 +34,7 @@ export class GymreadComponent implements OnInit {
   }
   Lectura( id1 )  {
     console.log(id1);
+    localStorage.setItem('gym' , id1);
     this.router.navigate(['/gyminfo']);
   }
 

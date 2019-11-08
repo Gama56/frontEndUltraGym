@@ -4,9 +4,11 @@
         <li *ngFor="let gym of gyms | async" class="list-group-item" (click)="Lectura(gym.id_Gym)" class="list-group-item" 
           >
           <img class="card-img-top" [src]="'/assets/img/gym-' + gym.id_Gym + '.jpg'">
-          <h2> {{ gym.gym_Campus }} </h2>        
-          <p> Dirección {{ gym.gym_Address}} </p>
-          <p>Telefono {{ gym.gym_Phone }} </p>
+          <div id="datos" style="border: 2px solid green; width: 350px; height: 150px" >
+            <h2> {{ gym.gym_Campus }} </h2>        
+            <p> Dirección {{ gym.gym_Address}} </p>
+            <p>Telefono {{ gym.gym_Phone }} </p>
+          </div>
         </li>
 </ul>
 </div>

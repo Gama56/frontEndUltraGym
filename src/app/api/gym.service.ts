@@ -29,8 +29,8 @@ export class GymService {
            tap(console.log));
     }
 
-    getOneGym(Id) {
-        return this._http.get(this.url + 'ReadOneGym?IdGym=' + Id);
+    getOneGym(IdGym) {
+        return this._http.get('https://backend-ultragym.azurewebsites.net/api/Gym/ReadOneGym?IdGym=' + IdGym);
     }
 
 

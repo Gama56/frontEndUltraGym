@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
     protected clienteService: 
     UserServicesService, private fb: FormBuilder) {}
 
+  private reponse: any;
   loginForm: FormGroup;
 
   ngOnInit() {
@@ -36,11 +37,14 @@ export class LoginComponent implements OnInit {
         data => {
           // Success
           this.users = data;
-
+          console.log(data);
+          console.log(user + ' ' + clave );
+          this.router.navigate(['/gymread']);
+          this.reponse = data;
+          localStorage.set('user', data);
           if (this.users.Usuario_UserName == user && this.users.Usuario_Password == clave) {
-            Swal.fire('Login Correcto');
+            console.log('Login Correcto');
             localStorage.setItem('isLoggedin', 'true');
-            this.router.navigate(['/gymread']);
           }
         },
         error => {
